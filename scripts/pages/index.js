@@ -7,28 +7,19 @@ async function getPhotographers() {
             }
         })
 
-        .then(function (data) {
-            if (data.value == photographers) {
-                console.log(photographers);
-                return photographers;
-            }
+        .then((data) => {
+            photographers = data.photographers;
         });
+    console.log(photographers);
+    return {
+        photographers
+    };
+}
 
-    `
-        <article>
-            < div class="photographer_section">
-                <h2>${name}</h2>
-                <h3>${city}, ${country}</h3>
-                <p>${tagline}</p>
-            </div>
-                <img src="${picture}" alt="${name}"
-            </article>`
 
-    .catch(function (error) {
-        // erreur survenue
-    })
-};
-
+// .catch(function (error) {
+//     // erreur survenue
+// })
 
 
 async function displayData(photographers) {

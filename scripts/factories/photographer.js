@@ -1,6 +1,7 @@
 function photographerFactory(data) {
     const {
         name,
+        id,
         city,
         country,
         tagline,
@@ -12,22 +13,37 @@ function photographerFactory(data) {
 
     function getUserCardDOM() {
         const article = document.createElement("article");
-        const img = document.createElement("img");
-        img.setAttribute("src", picture)
-        // créer un a pour redirection
-        article.appendChild(img);
+        article.innerHTML =
+            `
+        <a href="photographer.html?${id}"><img src = "${picture}" alt = "${name}" title = "picture of" + "${name}">
+        <h2 class="name">${name}</h2></a>
+        <div>
+        <p class="city">${city}, ${country}</p>
+        <p class="tagline">${tagline}</p>
+        <p class="price">${price}€/jour</p>
+        </div>
+        `
+        // const img = document.createElement("img");
+        // img.setAttribute("src", picture)
+        // article.appendChild(img);
 
-        const h2 = document.createElement("h2");
-        h2.textContent = name;
-        article.appendChild(h2);
+        // const h2 = document.createElement("h2");
+        // h2.textContent = name;
+        // article.appendChild(h2);
 
-        const text = document.createElement("p");
-        text.innerHTML = `<div class="article_information">
-      <p class="city">${city + ", " + country}</p>
-      <p class="tagline">${tagline}</p>
-      <p class="price">${price}€/jour</p>
-      </div>`
-        article.appendChild(text);
+        // const paragraph = document.createElement("div");
+        // paragraph.innerHTML =
+        //     `
+        // <p class="city">${city}, ${country}</p>
+        // <p class="tagline">${tagline}</p>
+        // <p class="price">${price}€/jour</p>
+        // `
+        // article.appendChild(paragraph);
+
+        // const a = document.createElement('a');
+        // a.setAttribute('href', 'photographer.html');
+        // a.innerHTML = name;
+        // article.appendChild(a);
 
         return (article);
     }

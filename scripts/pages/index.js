@@ -7,9 +7,12 @@ async function getPhotographers() {
             }
         })
 
-        .then((data) => {
-            photographers = data.photographers;
-        });
+        // .then((data) => {
+        //     photographers = data.photographers;
+        // });
+        .then(function (data) {
+            photographers = data.photographers
+        })
     console.log(photographers);
     return {
         photographers

@@ -2,10 +2,14 @@
     display: none;
 }
 
-.photograph-header {
-    background-color: #FAFAFA;
+.photograph-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fafafa;
+    margin: 1.8% 6%;
     height: 300px;
-    margin: 0 100px;
+    padding: 0 4%;
 }
 
 .contact_button {
@@ -73,4 +77,97 @@ form input {
     height: 68px;
     border: none;
     border-radius: 5px;
+}
+
+.filter-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 290px;
+    width: 100%;
+}
+
+.photograph-filter {
+    margin: 1.8% 6%;
+}
+
+.filter-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 1.8% 0%;
+}
+
+.filter-header label {
+    font-weight: 900;
+    padding-right: 2%;
+}
+
+#filters-select {
+    background-color: #901c1c;
+    color: white;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border: none;
+    font-size: 15px;
+    font-weight: 700;
+    width: 170px;
+    height: 70px;
+    padding: 10px;
+}
+
+.filter-article {
+    width: 200px;
+}
+
+.filter-article img {
+    object-fit: cover;
+    width: 350px;
+    height: 350px;
+    border-radius: 8px;
+    ;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.filter-text {
+    width: 350px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: #901c1c;
+    font-size: 20px;
+
+}
+
+.photograph-like {
+    list-style: none;
+}
+
+.fa-heart {
+    padding-left: 10px;
+}
+
+.photograph-nav {
+    background-color: #db8876;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px;
+    font-size: 25px;
+    padding-right: 2%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    position: fixed;
+    bottom: 0px;
+    right: 50px;
+    font-weight: 600;
 }

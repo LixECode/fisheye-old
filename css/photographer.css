@@ -79,7 +79,13 @@ form input {
     border-radius: 5px;
 }
 
-
+.filter-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 290px;
+    width: 100%;
+}
 
 .photograph-filter {
     margin: 1.8% 6%;
@@ -119,12 +125,28 @@ form input {
 
 .filter-article img {
     object-fit: cover;
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     border-radius: 8px;
     ;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
     -ms-border-radius: 8px;
     -o-border-radius: 8px;
+}
+
+.filter-text {
+    width: 350px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: #901c1c;
+    font-size: 20px;
+
+}
+
+.filter-text ul {
+
+    list-style: none;
 }

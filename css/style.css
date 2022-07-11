@@ -4,10 +4,8 @@ body {
     font-family: "DM Sans", sans-serif;
 }
 
-
 header {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     height: 90px;

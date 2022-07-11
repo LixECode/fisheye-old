@@ -17,11 +17,9 @@ function photographerFactory(data) {
             `
         <a href="photographer.html?id=${id}"><img class="img-portrait" src="${picture}" alt ="${name}" title = "picture of" + "${name}">
         <h2 class="name">${name}</h2></a>
-        <div>
         <p class="city">${city}, ${country}</p>
         <p class="tagline">${tagline}</p>
         <p class="price">${price}€/jour</p>
-        </div>
         `
         // const img = document.createElement("img");
         // img.setAttribute("src", picture)

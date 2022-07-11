@@ -16,10 +16,10 @@ function photographerFactory(data) {
         article.innerHTML =
             `
         <a href="photographer.html?id=${id}"><img class="img-portrait" src="${picture}" alt ="${name}" title = "picture of" + "${name}">
-        <h2 class="name">${name}</h2></a>
-        <p class="city">${city}, ${country}</p>
-        <p class="tagline">${tagline}</p>
-        <p class="price">${price}€/jour</p>
+        <h2 class="name-portrait">${name}</h2></a>
+        <p class="city-portrait">${city}, ${country}</p>
+        <p class="tagline-portrait">${tagline}</p>
+        <p class="price-portrait">${price}€/jour</p>
         `
         // const img = document.createElement("img");
         // img.setAttribute("src", picture)

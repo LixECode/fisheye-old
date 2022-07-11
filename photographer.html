@@ -16,7 +16,7 @@
     <img src="assets/images/logo.png" class="logo" />
   </header>
   <main id="main">
-    <section class="photograph-section">
+    <!-- <section class="photograph-section">
       <div class="photograph-header">
         <h2 class="name-portrait">${name}</h2>
         <p class="city-portrait">${city}, ${country}</p>
@@ -25,8 +25,6 @@
       <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
       <img class="img-portrait" src="assets/photographers/MimiKeel.jpg" alt="${name}" title="picture of" + "${name}">
     </section>
-
-
     <section class="photograph-filter">
       <div class="filter-header">
         <label for="filter-menu">Trier par</label><br>
@@ -41,8 +39,8 @@
           <img src="assets/images/Mimi/Animals_Rainbow.jpg" alt="palette du gout">
           <div class="filter-text">
             <h3>${name}</h3>
-            <ul>
-              <li><i class="fa-solid fa-heart heartSolid"></i></li>
+            <ul class="photograph-like">
+              <li>${like}<i class="fa-solid fa-heart heartSolid"></i></li>
             </ul>
           </div>
         </article>
@@ -50,8 +48,8 @@
           <img src="assets/images/Mimi/Animals_Rainbow.jpg" alt="palette du gout">
           <div class="filter-text">
             <h3>${name}</h3>
-            <ul>
-              <li><i class="fa-solid fa-heart heartSolid"></i></li>
+            <ul class="photograph-like">
+              <li>${like}<i class="fa-solid fa-heart heartSolid"></i></li>
             </ul>
           </div>
         </article>
@@ -59,8 +57,8 @@
           <img src="assets/images/Mimi/Animals_Rainbow.jpg" alt="palette du gout">
           <div class="filter-text">
             <h3>${name}</h3>
-            <ul>
-              <li><i class="fa-solid fa-heart heartSolid"></i></li>
+            <ul class="photograph-like">
+              <li>${like}<i class="fa-solid fa-heart heartSolid"></i></li>
             </ul>
           </div>
         </article>
@@ -68,8 +66,8 @@
           <img src="assets/images/Mimi/Animals_Rainbow.jpg" alt="palette du gout">
           <div class="filter-text">
             <h3>${name}</h3>
-            <ul>
-              <li><i class="fa-solid fa-heart heartSolid"></i></li>
+            <ul class="photograph-like">
+              <li>${like}<i class="fa-solid fa-heart heartSolid"></i></li>
             </ul>
           </div>
         </article>
@@ -77,8 +75,8 @@
           <img src="assets/images/Mimi/Animals_Rainbow.jpg" alt="palette du gout">
           <div class="filter-text">
             <h3>${name}</h3>
-            <ul>
-              <li><i class="fa-solid fa-heart heartSolid"></i></li>
+            <ul class="photograph-like">
+              <li>${like}<i class="fa-solid fa-heart heartSolid"></i></li>
             </ul>
           </div>
         </article>
@@ -86,8 +84,8 @@
           <img src="assets/images/Mimi/Animals_Rainbow.jpg" alt="palette du gout">
           <div class="filter-text">
             <h3>${name}</h3>
-            <ul>
-              <li><i class="fa-solid fa-heart heartSolid"></i></li>
+            <ul class="photograph-like">
+              <li>${like}<i class="fa-solid fa-heart heartSolid"></i></li>
             </ul>
           </div>
         </article>
@@ -95,8 +93,8 @@
           <img src="assets/images/Mimi/Animals_Rainbow.jpg" alt="palette du gout">
           <div class="filter-text">
             <h3>${name}</h3>
-            <ul>
-              <li><i class="fa-solid fa-heart heartSolid"></i></li>
+            <ul class="photograph-like">
+              <li>${like}<i class="fa-solid fa-heart heartSolid"></i></li>
             </ul>
           </div>
         </article>
@@ -104,8 +102,8 @@
           <img src="assets/images/Mimi/Animals_Rainbow.jpg" alt="palette du gout">
           <div class="filter-text">
             <h3>${name}</h3>
-            <ul>
-              <li><i class="fa-solid fa-heart heartSolid"></i></li>
+            <ul class="photograph-like">
+              <li>${like}<i class="fa-solid fa-heart heartSolid"></i></li>
             </ul>
           </div>
         </article>
@@ -113,13 +111,20 @@
           <img src="assets/images/Mimi/Animals_Rainbow.jpg" alt="palette du gout">
           <div class="filter-text">
             <h3>${name}</h3>
-            <ul>
-              <li><i class="fa-solid fa-heart heartSolid"></i></li>
+            <ul class="photograph-like">
+              <li>${like}<i class="fa-solid fa-heart heartSolid"></i></li>
             </ul>
           </div>
         </article>
       </div>
     </section>
+    <div class="photograph-nav">
+      <ul class="photograph-like">
+        <li>${like}<i class="fa-solid fa-heart heartSolid"></i></li>
+      </ul>
+      <p>${price}€/jour</p>
+    </div> -->
+
   </main>
   <div id="contact_modal">
     <div class="modal">

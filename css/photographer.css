@@ -129,10 +129,10 @@ form input {
     height: 350px;
     border-radius: 8px;
     ;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
 
 .filter-text {
@@ -146,7 +146,28 @@ form input {
 
 }
 
-.filter-text ul {
-
+.photograph-like {
     list-style: none;
+}
+
+.fa-heart {
+    padding-left: 10px;
+}
+
+.photograph-nav {
+    background-color: #db8876;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px;
+    font-size: 25px;
+    padding-right: 2%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    position: fixed;
+    bottom: 0px;
+    right: 50px;
+    font-weight: 600;
 }

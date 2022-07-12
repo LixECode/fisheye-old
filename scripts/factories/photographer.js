@@ -61,7 +61,7 @@ function photographerFactory(data) {
 
 // FACTORY PHOTOGRAPHER 2
 
-function photographerMedia(data) {
+function mediaFactory(data) {
     const {
         photographerId,
         title,
@@ -71,10 +71,10 @@ function photographerMedia(data) {
 
     const images = `assets/images/${photographerId}/${image}`;
 
-    function getPhotographerMedia() {
-        const media = document.createElement('section')
-        media.classList.add('photograph-filter')
-        media.innerHTML =
+    function getMediaFactory() {
+        const filter = document.createElement('section')
+        filter.classList.add('photograph-filter')
+        filter.innerHTML =
             `
       <div class="filter-header">
         <label for="filter-menu">Trier par</label><br>
@@ -169,26 +169,26 @@ function photographerMedia(data) {
         </article>
       </div>
     `
-        return (section)
+        return (filter)
     }
     return {
         photographerId,
         title,
         image,
         likes,
-        getPhotographerMedia
+        getMediaFactory
     }
 }
 
 // FACTORY PHOTOGRAPHER NAV
 
-function getUserNav(data) {
+function NavFactory(data) {
     const {
         price,
         likes
     } = data;
 
-    function photographerNav() {
+    function getNavFactory() {
 
         const nav = document.createElement('div')
         nav.classList.add('photograph-nav')
@@ -204,7 +204,7 @@ function getUserNav(data) {
     return {
         price,
         likes,
-        photographerNav
+        getNavFactory
     }
 
 }

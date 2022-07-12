@@ -8,7 +8,7 @@ let str = new URLSearchParams(window.location.search);
 let urlId = str.get("id");
 
 async function getMedia() {
-  let media = [];
+  let medias = [];
   let photographers = [];
   await fetch("/data/photographers.json")
     .then(function (response) {
@@ -18,11 +18,12 @@ async function getMedia() {
     })
 
     .then(function (data) {
-      media = data.media
+      medias = data.medias
       photographers = data.photographers
     })
+
   return {
-    media,
+    medias,
     photographers
   };
 }
@@ -31,28 +32,47 @@ async function getMedia() {
 
 
 async function init() {
-  // Récupère les datas des photographes
+  // Récupère les datas photographers / media
   const {
-    media,
+    medias,
     photographers
   } = await getMedia();
-  displayDataPhotographer(photographers, media)
+  displayDataPhotographer(photographers, medias)
 };
 
 init();
 // Afficher les informations data
-async function displayDataPhotographer(photographers, media) {
+async function displayDataPhotographer(photographers, medias) {
   const photographersMain = document.querySelector('#main')
   console.log(urlId)
   console.log(photographers)
 
-  const photographer = photographers.find(function (findId) {
-    return findId.id == urlId
+  //photographersFactory
+  const photographer = photographers.find(function (findIdPhotographer) {
+    return findIdPhotographer.id == urlId;
   });
   console.log(photographer)
   const photographerModel = photographerFactory(photographer);
   const userPortrait = photographerModel.getPortraitPhotographer();
   photographersMain.appendChild(userPortrait);
 
-  //tableau media
+  //mediaFactory
+  const media = medias.find(function (findMedia) {
+    return findMedia.id == urlId;
+  });
+  console.log(media)
+  const filterModel = mediaFactory(media);
+  const userFilter = filterModel.getMediaFactory();
+  photographersMain.appendChild(userFilter);
+
+  //navFactory
+  const navSection = nav.find(function (findNav) {
+    return findNav.id == urlId;
+  });
+
+  console.log(nav)
+  const navModel = NavFactory(photographers, media);
+  const navDisplay = navModel.getNavFactory();
+  photographersMain.appendChild(navDisplay);
+
 };

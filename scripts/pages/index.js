@@ -25,7 +25,7 @@ async function getPhotographers() {
 // })
 
 
-async function displayData(photographers) {
+async function displayDataIndex(photographers) {
     const photographersSection = document.querySelector(".photographer_section");
 
     photographers.forEach((photographer) => {
@@ -40,7 +40,7 @@ async function init() {
     const {
         photographers
     } = await getPhotographers();
-    displayData(photographers);
+    displayDataIndex(photographers);
 };
 
 init();

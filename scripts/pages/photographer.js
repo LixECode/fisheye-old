@@ -58,7 +58,7 @@ async function displayDataPhotographer(photographers, medias) {
 
   //mediaFactory
   const media = medias.find(function (findMedia) {
-    return findMedia.id == urlId;
+    return findMedia.id == photographerId;
   });
   console.log(media)
   const filterModel = mediaFactory(media);
@@ -67,11 +67,11 @@ async function displayDataPhotographer(photographers, medias) {
 
   //navFactory
   const navSection = nav.find(function (findNav) {
-    return findNav.id == urlId;
+    return findNav.id == nav;
   });
 
   console.log(nav)
-  const navModel = NavFactory(photographers, media);
+  const navModel = NavFactory(navSection);
   const navDisplay = navModel.getNavFactory();
   photographersMain.appendChild(navDisplay);
 

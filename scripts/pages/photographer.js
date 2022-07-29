@@ -18,7 +18,7 @@ async function getMedia() {
     })
 
     .then(function (data) {
-      medias = data.medias
+      medias = data.media
       photographers = data.photographers
     })
 
@@ -43,9 +43,10 @@ async function init() {
 init();
 // Afficher les informations data
 async function displayDataPhotographer(photographers, medias) {
-  const photographersMain = document.querySelector('#main')
+  const photographersHeader = document.querySelector('.photograph-section')
   console.log(urlId)
   console.log(photographers)
+  console.log(medias)
 
   //photographersFactory
   const photographer = photographers.find(function (findIdPhotographer) {
@@ -54,25 +55,28 @@ async function displayDataPhotographer(photographers, medias) {
   console.log(photographer)
   const photographerModel = photographerFactory(photographer);
   const userPortrait = photographerModel.getPortraitPhotographer();
-  photographersMain.appendChild(userPortrait);
+  photographersHeader.appendChild(userPortrait);
 
   //mediaFactory
-  const media = medias.find(function (findMedia) {
-    return findMedia.id == photographerId;
+  const media = medias.filter(function (findMedia) {
+    return findMedia.photographerId == urlId;
   });
   console.log(media)
-  const filterModel = mediaFactory(media);
-  const userFilter = filterModel.getMediaFactory();
-  photographersMain.appendChild(userFilter);
-
-  //navFactory
-  const navSection = nav.find(function (findNav) {
-    return findNav.id == nav;
+  const photographersFilter = document.querySelector('.filter-container')
+  media.forEach(function (e) {
+    const filterModel = mediaFactory(e);
+    const userFilter = filterModel.getMediaFactory();
+    photographersFilter.appendChild(userFilter);
   });
 
-  console.log(nav)
-  const navModel = NavFactory(navSection);
-  const navDisplay = navModel.getNavFactory();
-  photographersMain.appendChild(navDisplay);
+  //navFactory
+  //   const navSection = nav.find(function (findNav) {
+  //     return findNav.nav == urlId;
+  //   });
+  // // ajouter le total like 
+  //   console.log(nav)
+  //   const navModel = NavFactory(navSection);
+  //   const navDisplay = navModel.getNavFactory();
+  //   photographersMain.appendChild(navDisplay);
 
 };

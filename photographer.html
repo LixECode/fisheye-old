@@ -26,6 +26,7 @@
       <img class="img-portrait" src="assets/photographers/MimiKeel.jpg" alt="${name}" title="picture of" + "${name}">
     </section>
     <section class="photograph-filter">
+
       <div class="filter-header">
         <label for="filter-menu">Trier par</label><br>
         <select name="filters" id="filters-select">
@@ -34,6 +35,7 @@
           <option class="filter-title" value="title">Titre</option>
         </select>
       </div>
+      
       <div class="filter-container">
         <article class="filter-article">
           <img src="assets/images/Mimi/Animals_Rainbow.jpg" alt="palette du gout">
@@ -124,7 +126,18 @@
       </ul>
       <p>${price}€/jour</p>
     </div> -->
-
+    <section class="photograph-section"></section>
+    <section class="photograph-filter">
+      <div class="filter-header">
+        <label for="filter-menu">Trier par</label><br>
+        <select name="filters" id="filters-select">
+          <option class="filter-popularity" value="popularity">Popularité</option>
+          <option class="filter-date" value="date">Date</option>
+          <option class="filter-title" value="title">Titre</option>
+        </select>
+      </div>
+      <div class="filter-container"></div>
+    </section>
   </main>
   <div id="contact_modal">
     <div class="modal">

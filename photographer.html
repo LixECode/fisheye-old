@@ -15,19 +15,14 @@
   <header>
     <img src="assets/images/logo.png" class="logo" />
   </header>
+
   <main id="main">
-    <!-- <section class="photograph-section">
-      <div class="photograph-header">
-        <h2 class="name-portrait">${name}</h2>
-        <p class="city-portrait">${city}, ${country}</p>
-        <p class="tagline-portrait">${tagline}</p>
-      </div>
-      <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-      <img class="img-portrait" src="assets/photographers/MimiKeel.jpg" alt="${name}" title="picture of" + "${name}">
-    </section>
+
+    <section class="photograph-header"></section>
+
     <section class="photograph-filter">
 
-      <div class="filter-header">
+      <div class="photograph-filter-header">
         <label for="filter-menu">Trier par</label><br>
         <select name="filters" id="filters-select">
           <option class="filter-popularity" value="popularity">Popularité</option>
@@ -35,112 +30,19 @@
           <option class="filter-title" value="title">Titre</option>
         </select>
       </div>
-      
-      <div class="filter-container">
-        <article class="filter-article">
-          <img src="assets/images/Mimi/Animals_Rainbow.jpg" alt="palette du gout">
-          <div class="filter-text">
-            <h3>${name}</h3>
-            <ul class="photograph-like">
-              <li>${like}<i class="fa-solid fa-heart heartSolid"></i></li>
-            </ul>
-          </div>
-        </article>
-        <article class="filter-article">
-          <img src="assets/images/Mimi/Animals_Rainbow.jpg" alt="palette du gout">
-          <div class="filter-text">
-            <h3>${name}</h3>
-            <ul class="photograph-like">
-              <li>${like}<i class="fa-solid fa-heart heartSolid"></i></li>
-            </ul>
-          </div>
-        </article>
-        <article class="filter-article">
-          <img src="assets/images/Mimi/Animals_Rainbow.jpg" alt="palette du gout">
-          <div class="filter-text">
-            <h3>${name}</h3>
-            <ul class="photograph-like">
-              <li>${like}<i class="fa-solid fa-heart heartSolid"></i></li>
-            </ul>
-          </div>
-        </article>
-        <article class="filter-article">
-          <img src="assets/images/Mimi/Animals_Rainbow.jpg" alt="palette du gout">
-          <div class="filter-text">
-            <h3>${name}</h3>
-            <ul class="photograph-like">
-              <li>${like}<i class="fa-solid fa-heart heartSolid"></i></li>
-            </ul>
-          </div>
-        </article>
-        <article class="filter-article">
-          <img src="assets/images/Mimi/Animals_Rainbow.jpg" alt="palette du gout">
-          <div class="filter-text">
-            <h3>${name}</h3>
-            <ul class="photograph-like">
-              <li>${like}<i class="fa-solid fa-heart heartSolid"></i></li>
-            </ul>
-          </div>
-        </article>
-        <article class="filter-article">
-          <img src="assets/images/Mimi/Animals_Rainbow.jpg" alt="palette du gout">
-          <div class="filter-text">
-            <h3>${name}</h3>
-            <ul class="photograph-like">
-              <li>${like}<i class="fa-solid fa-heart heartSolid"></i></li>
-            </ul>
-          </div>
-        </article>
-        <article class="filter-article">
-          <img src="assets/images/Mimi/Animals_Rainbow.jpg" alt="palette du gout">
-          <div class="filter-text">
-            <h3>${name}</h3>
-            <ul class="photograph-like">
-              <li>${like}<i class="fa-solid fa-heart heartSolid"></i></li>
-            </ul>
-          </div>
-        </article>
-        <article class="filter-article">
-          <img src="assets/images/Mimi/Animals_Rainbow.jpg" alt="palette du gout">
-          <div class="filter-text">
-            <h3>${name}</h3>
-            <ul class="photograph-like">
-              <li>${like}<i class="fa-solid fa-heart heartSolid"></i></li>
-            </ul>
-          </div>
-        </article>
-        <article class="filter-article">
-          <img src="assets/images/Mimi/Animals_Rainbow.jpg" alt="palette du gout">
-          <div class="filter-text">
-            <h3>${name}</h3>
-            <ul class="photograph-like">
-              <li>${like}<i class="fa-solid fa-heart heartSolid"></i></li>
-            </ul>
-          </div>
-        </article>
-      </div>
+
+      <div class="photograph-filter-container"></div>
+
     </section>
-    <div class="photograph-nav">
-      <ul class="photograph-like">
-        <li>${like}<i class="fa-solid fa-heart heartSolid"></i></li>
-      </ul>
-      <p>${price}€/jour</p>
-    </div> -->
-    <section class="photograph-section"></section>
-    <section class="photograph-filter">
-      <div class="filter-header">
-        <label for="filter-menu">Trier par</label><br>
-        <select name="filters" id="filters-select">
-          <option class="filter-popularity" value="popularity">Popularité</option>
-          <option class="filter-date" value="date">Date</option>
-          <option class="filter-title" value="title">Titre</option>
-        </select>
-      </div>
-      <div class="filter-container"></div>
-    </section>
+    <div class="photograph-nav"></div>
+    <div class="lightbox"></div>
+
   </main>
-  <div id="contact_modal">
+
+  <div id="contact-modal">
+
     <div class="modal">
+
       <header class="header-form">
         <h2>Contactez-moi</h2>
         <img src="assets/icons/close.svg" onclick="closeModal()" />
@@ -148,28 +50,30 @@
 
       <form class="form" name="reserve" action="photographer.html" method="get" onsubmit="return validate();">
 
-        <div class="formData">
+        <div class="form-data">
           <label for="first">Prénom</label>
           <input class="text-control" type="text" id="first" name="first" minlength="2" />
         </div>
 
-        <div class="formData">
+        <div class="form-data">
           <label for="last">Nom</label>
           <input class="text-control" type="text" id="last" name="last" minlength="2" />
         </div>
-        <div class="formData">
+        <div class="form-data">
           <label for="email">Email</label>
           <input class="text-control" type="email" id="email" name="email" />
         </div>
-        <div class="formData">
+        <div class="form-data">
           <label for="message">Votre message</label>
           <input class="text-control" type="message" id="message" name="message" minlength="10" />
         </div>
-        <button class="contact_button">Envoyer</button>
+        <button class="contact-button">Envoyer</button>
       </form>
-      <script src="scripts/factories/Photographer.js"></script>
+
+      <script src="scripts/factories/factoryPhotographer.js"></script>
       <script src="/scripts/utils/contactForm.js"></script>
-      <script src="/scripts/pages/photographer.js"></script>
+      <script src="/scripts/utils/lightbox.js"></script>
+      <script src="/scripts/pages/pagePhotographer.js"></script>
 </body>
 
 </html>

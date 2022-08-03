@@ -68,13 +68,14 @@ async function displayDataPhotographer(photographers, medias) {
   });
 
   //navFactory
-  //   const navSection = nav.find(function (findNav) {
-  //     return findNav.nav == urlId;
-  //   });
-  // // ajouter le total like 
-  //   console.log(nav)
-  //   const navModel = NavFactory(navSection);
-  //   const navDisplay = navModel.getNavFactory();
-  //   photographersMain.appendChild(navDisplay);
+  const nav = document.querySelector('.photograph-nav')
+  const photographersNav = nav.find(function (findNav) {
+    return findNav.nav == urlId;
+  });
+  // ajouter le total like 
+  console.log(nav)
+  const navModel = NavFactory(photographersNav);
+  const navDisplay = navModel.getNavFactory();
+  nav.appendChild(navDisplay);
 
 };

@@ -75,7 +75,7 @@ function mediaFactory(data) {
     video,
   } = data;
 
-  // links with medias files in html
+  // links with medias files
   const mediaImage = `<img src="./assets/images/${photographerId}/${image}"/>`;
   const mediaVideo = `<video><source src="./assets/images/${photographerId}/${video}#t=5.0" type="video/mp4"></video>`;
   let media
@@ -114,7 +114,7 @@ function mediaFactory(data) {
 // FACTORY PAGE PHOTOGRAPHER NAV
 
 // link with nav in factories
-function NavFactory(data) {
+function navFactory(data) {
   const {
     price,
     likes
@@ -123,8 +123,7 @@ function NavFactory(data) {
   // get nav elements in factories
   function getNavFactory() {
 
-    const photographNav = document.createElement('div')
-    photographNav.classList.add('photograph-nav')
+    const photographNav = document.querySelector('.photograph-nav')
     photographNav.innerHTML =
       `
       <ul class="photograph-like">

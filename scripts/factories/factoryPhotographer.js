@@ -1,5 +1,6 @@
-// FACTORY 1
+// FACTORY INDEX + PHOTOGRAPHER PAGES
 
+// link media with portrait photographer
 function photographerFactory(data) {
   const {
     name,
@@ -13,9 +14,10 @@ function photographerFactory(data) {
 
   const picture = `assets/photographers/${portrait}`;
 
+  // get media with portrait photographer in html
   function getUserCardDOM() {
-    const article = document.createElement("article");
-    article.innerHTML =
+    const photographPortrait = document.createElement("article");
+    photographPortrait.innerHTML =
       `
         <a href="photographer.html?id=${id}"><img class="img-portrait" src="${picture}" alt ="${name}" title = "picture of" + "${name}">
         <h2 class="name-portrait">${name}</h2></a>
@@ -24,18 +26,19 @@ function photographerFactory(data) {
         <p class="price-portrait">${price}€/jour</p>
         `
 
-    return (article);
+    return (photographPortrait);
   }
 
-  // FACTORY PHOTOGRAPHER 1
+  // FACTORY PAGE PHOTOGRAPHER HEADER
 
+  // get media for portrait photographer in html
   function getPortraitPhotographer() {
-    const section = document.querySelector('.photograph-section')
-    const divHeaderPhotograph = document.createElement('div')
-    divHeaderPhotograph.classList.add('photograph-header-container')
-    divHeaderPhotograph.innerHTML =
+    const photographHeaderSection = document.querySelector('.photograph-header')
+    const photographHeader = document.createElement('div')
+    photographHeader.classList.add('photograph-header-container')
+    photographHeader.innerHTML =
       `
-    <div class="photograph-header">
+    <div class="photograph-portrait">
     <h2 class="name-portrait">${name}</h2>
     <p class="city-portrait">${city}, ${country}</p>
     <p class="tagline-portrait">${tagline}</p>
@@ -43,7 +46,7 @@ function photographerFactory(data) {
     <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
     <img class="img-portrait" src="${picture}" alt="${id}" title="picture of" + "${id}">
         `
-    return (divHeaderPhotograph)
+    return (photographHeader)
   }
 
   return {
@@ -60,8 +63,9 @@ function photographerFactory(data) {
   }
 }
 
-// FACTORY PHOTOGRAPHER 2
+// FACTORY PAGE PHOTOGRAPHER FILTER MEDIAS
 
+// link with media in factories
 function mediaFactory(data) {
   const {
     photographerId,
@@ -71,10 +75,9 @@ function mediaFactory(data) {
     video,
   } = data;
 
-  // const images = `assets/images/${photographerId}/${image}`;
+  // links with medias files in html
   const mediaImage = `<img src="./assets/images/${photographerId}/${image}"/>`;
   const mediaVideo = `<video><source src="./assets/images/${photographerId}/${video}#t=5.0" type="video/mp4"></video>`;
-  // const media = image == undefined ? mediaVideo : mediaImage;
   let media
   if (!image) {
     media = mediaVideo
@@ -82,20 +85,21 @@ function mediaFactory(data) {
     media = mediaImage
   }
 
+  // get media in html
   function getMediaFactory() {
-    const article = document.createElement('article')
-    article.classList.add('filter-article')
-    article.innerHTML +=
+    const photographFilterArticle = document.createElement('article')
+    photographFilterArticle.classList.add('photograph-filter-article')
+    photographFilterArticle.innerHTML +=
       `
           ${media}
-          <div class="filter-text">
+          <div class="photograph-filter-text">
             <h3>${title}</h3>
             <ul class="photograph-like">
               <li>${likes}<i class="fa-solid fa-heart heartSolid"></i></li>
             </ul>
           </div>
     `
-    return (article)
+    return (photographFilterArticle)
   }
   return {
     photographerId,
@@ -107,26 +111,28 @@ function mediaFactory(data) {
   }
 }
 
-// FACTORY PHOTOGRAPHER NAV
+// FACTORY PAGE PHOTOGRAPHER NAV
 
+// link with nav in factories
 function NavFactory(data) {
   const {
     price,
     likes
   } = data;
 
+  // get nav elements in factories
   function getNavFactory() {
 
-    const nav = document.createElement('div')
-    nav.classList.add('photograph-nav')
-    nav.innerHTML =
+    const photographNav = document.createElement('div')
+    photographNav.classList.add('photograph-nav')
+    photographNav.innerHTML =
       `
       <ul class="photograph-like">
         <li>${likes}<i class="fa-solid fa-heart heartSolid"></i></li>
       </ul>
       <p>${price}€/jour</p>
           `
-    return (nav)
+    return (photographNav)
   }
   return {
     price,

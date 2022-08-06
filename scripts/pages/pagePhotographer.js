@@ -36,6 +36,7 @@ async function init() {
     photographers
   } = await getMedia();
   displayDataPhotographer(photographers, medias)
+  getLightbox()
 };
 
 init();
@@ -69,12 +70,20 @@ async function displayDataPhotographer(photographers, medias) {
 
   //navFactory
   const nav = document.querySelector('.photograph-nav')
-  const photographersNav = nav.find(function (findNav) {
-    return findNav.nav == urlId;
-  });
-  // ajouter le total like 
+  // const photographersNav = nav.find(function (findNav) {
+  //   return findNav.nav == urlId;
+  // });
+  let like = 0;
+  media.forEach(function (totalLikes) {
+    like += totalLikes.likes;
+  })
+  console.log(like)
+
   console.log(nav)
-  const navModel = NavFactory(photographersNav);
+  const navModel = navFactory({
+    price: photographer.price,
+    likes: like
+  });
   const navDisplay = navModel.getNavFactory();
   nav.appendChild(navDisplay);
 

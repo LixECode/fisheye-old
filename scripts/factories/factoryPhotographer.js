@@ -123,7 +123,8 @@ function navFactory(data) {
   // get nav elements in factories
   function getNavFactory() {
 
-    const photographNav = document.querySelector('.photograph-nav')
+    const photographNav = document.createElement('div')
+    photographNav.classList.add('photograph-nav-container')
     photographNav.innerHTML =
       `
       <ul class="photograph-like">

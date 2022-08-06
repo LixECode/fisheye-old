@@ -90,6 +90,7 @@
 .photograph-filter-article {
     width: 200px;
     padding-bottom: 20px;
+    cursor: pointer;
 }
 
 .photograph-filter-article h3 {

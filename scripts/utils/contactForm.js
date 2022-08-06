@@ -13,7 +13,7 @@ const firstName = document.querySelector("#first"); //input firstname
 const lastName = document.querySelector("#last"); //input lastname
 const email = document.querySelector("#email"); //input email
 const message = document.querySelector("#message"); //input message
-const modalSubmit = document.querySelector(".contact_button"); //modal submit button
+const modalSubmit = document.querySelector(".contact-button"); //modal submit button
 
 
 function InsertName() {

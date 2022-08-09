@@ -141,3 +141,48 @@ function navFactory(data) {
   }
 
 }
+
+// FACTORY PAGE PHOTOGRAPHER LIGHTBOX
+
+// link with nav in factories
+function lightboxFactory(data) {
+  const {
+    image,
+    video,
+    id,
+    title,
+  } = data;
+
+  let media
+  if (!image) {
+    media = mediaVideo
+  } else {
+    media = mediaImage
+  }
+
+  // get nav elements in factories
+  function getLightboxFactory() {
+
+    const photographLightbox = document.createElement('div')
+    photographLightbox.classList.add('lightbox')
+    photographLightbox.innerHTML =
+      `
+     <img src="${media}" alt="${id}" title=${title} >
+      <h3>${title}</h3>
+      <ul>
+        <li><i class="fa-solid fa-xmark"></i></li>
+        <li><i class="fa-solid fa-chevron-left"></i></li>
+        <li><i class="fa-solid fa-chevron-right"></i></li>
+      </ul>
+          `
+    return (photographLightbox)
+  }
+  return {
+    media,
+    id,
+    title,
+    image,
+    video,
+    getLightboxFactory
+  }
+};

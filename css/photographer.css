@@ -178,15 +178,69 @@
 
 .lightbox {
     border-radius: 5px;
-    background-color: #DB8876;
-    width: 50%;
+    border: solid 2px black;
+    background-color: white;
+    color: #901c1c;
+    width: 90%;
+    height: 85%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     padding: 35px;
-    margin: auto;
+    position: absolute;
+    top: 4%;
+    left: 3%;
+    position: fixed;
 }
+
+.lightbox-media {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 95%;
+}
+
+.lightbox h3 {
+    margin: 0;
+    padding-top: 10px;
+}
+
+.lightbox button {
+    list-style: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.lightbox .fa-solid {
+    position: absolute;
+    font-size: 50px;
+    color: #901c1c;
+}
+
+.fa-xmark {
+    top: 30px;
+    right: 30px;
+}
+
+.fa-chevron-left {
+    left: 30px;
+    top: 50%;
+}
+
+.fa-chevron-right {
+    right: 30px;
+    top: 50%;
+}
+
+.lightbox img {
+    object-fit: cover;
+    height: 100%;
+}
+
 
 /* CONTACT FORM */
 

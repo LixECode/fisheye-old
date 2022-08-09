@@ -130,7 +130,7 @@ function navFactory(data) {
       <ul class="photograph-like">
         <li>${likes}<i class="fa-solid fa-heart heartSolid"></i></li>
       </ul>
-      <p>${price}€/jour</p>
+      <p>${price}€ / jour</p>
           `
     return (photographNav)
   }

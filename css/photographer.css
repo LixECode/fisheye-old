@@ -3,6 +3,7 @@
 .photograph-header {
     background-color: #fafafa;
     margin: 1.8% 6%;
+    width: 75%;
     height: 300px;
     padding: 0 4%;
     display: flex;
@@ -83,7 +84,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    column-gap: 290px;
+    column-gap: 250px;
     width: 100%;
 }
 
@@ -147,19 +148,30 @@
 .photograph-nav {
     background-color: #db8876;
     color: black;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
     width: 400px;
+    height: 80px;
     font-size: 25px;
-    padding-right: 2%;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     position: fixed;
     bottom: 0px;
-    right: 50px;
+    right: 35px;
     font-weight: 600;
+}
+
+.photograph-nav-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.photograph-nav-container ul {
+    width: 180px;
+}
+
+.photograph-nav-container p {
+    padding-right: 30px;
 }
 
 /*PAGE PHOTOGRAPHER LIGHTBOX*/

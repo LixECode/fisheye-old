@@ -43,7 +43,7 @@ function photographerFactory(data) {
     <p class="city-portrait">${city}, ${country}</p>
     <p class="tagline-portrait">${tagline}</p>
     </div>
-    <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+    <button class="contact-button" onclick="displayModal()">Contactez-moi</button>
     <img class="img-portrait" src="${picture}" alt="${id}" title="picture of" + "${id}">
         `
     return (photographHeader)
@@ -130,7 +130,7 @@ function navFactory(data) {
       <ul class="photograph-like">
         <li>${likes}<i class="fa-solid fa-heart heartSolid"></i></li>
       </ul>
-      <p>${price}€/jour</p>
+      <p>${price}€ / jour</p>
           `
     return (photographNav)
   }
@@ -141,3 +141,48 @@ function navFactory(data) {
   }
 
 }
+
+// FACTORY PAGE PHOTOGRAPHER LIGHTBOX
+
+// link with nav in factories
+function lightboxFactory(data) {
+  const {
+    image,
+    video,
+    id,
+    title,
+  } = data;
+
+  let media
+  if (!image) {
+    media = mediaVideo
+  } else {
+    media = mediaImage
+  }
+
+  // get nav elements in factories
+  function getLightboxFactory() {
+
+    const photographLightbox = document.createElement('div')
+    photographLightbox.classList.add('lightbox')
+    photographLightbox.innerHTML =
+      `
+     <img src="${media}" alt="${id}" title=${title} >
+      <h3>${title}</h3>
+      <ul>
+        <li><i class="fa-solid fa-xmark"></i></li>
+        <li><i class="fa-solid fa-chevron-left"></i></li>
+        <li><i class="fa-solid fa-chevron-right"></i></li>
+      </ul>
+          `
+    return (photographLightbox)
+  }
+  return {
+    media,
+    id,
+    title,
+    image,
+    video,
+    getLightboxFactory
+  }
+};

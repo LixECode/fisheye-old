@@ -87,4 +87,11 @@ async function displayDataPhotographer(photographers, medias) {
   const navDisplay = navModel.getNavFactory();
   nav.appendChild(navDisplay);
 
+  //lightboxfactory
+  // const lightbox = document.querySelector('.lightbox')
+
+  // const lightboxModel = lightboxFactory();
+  // const lightboxDisplay = lightboxModel.getLightboxFactory();
+  // lightbox.appendChild(lightboxDisplay);
+
 };

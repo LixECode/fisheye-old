@@ -1,16 +1,20 @@
-function getLightbox() {
-    const article = document.querySelectorAll('.photograph-filter-article')
-    article.forEach((e) => e.addEventListener("click", displayLightbox));
-    console.log(article);
-}
+    const Lightbox = document.querySelector('.lightbox');
+    const lightboxClose = document.querySelector('.lightbox-close');
 
-function displayLightbox() {
-    const lightbox = document.querySelector('.lightbox');
-    lightbox.style.display = "block";
-    console.log('lightbox OK')
-}
+    function getLightbox() {
+        const article = document.querySelectorAll('.photograph-filter-article')
+        article.forEach((e) => e.addEventListener("click", displayLightbox));
+        console.log(article);
+    }
 
-function closeLightbox() {
-    const lightbox = document.querySelector('.lightbox');
-    lightbox.style.display = "none";
-}
+    function displayLightbox() {
+        Lightbox.style.display = "block";
+        console.log('lightbox OPEN');
+    }
+
+    function closeLightbox() {
+        Lightbox.style.display = "none";
+        console.log('lightbox CLOSE');
+    };
+
+    lightboxClose.addEventListener("click", closeLightbox);

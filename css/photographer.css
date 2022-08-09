@@ -1,9 +1,13 @@
+.photograph-header,
+.photograph-filter {
+    margin: 0 auto;
+}
+
 /*PAGE PHOTOGRAPHER HEADER*/
 
 .photograph-header {
-    background-color: #fafafa;
-    margin: 1.8% 6%;
     width: 75%;
+    background-color: #fafafa;
     height: 300px;
     padding: 0 4%;
     display: flex;
@@ -25,7 +29,7 @@
     padding: 0;
 }
 
-.contact_button {
+.contact-button {
     font-size: 20px;
     font-weight: bold;
     color: white;
@@ -38,31 +42,43 @@
     cursor: pointer;
 }
 
+.contact-button:hover {
+    background-color: #db8876;
+    color: black;
+}
+
 
 /*PAGE PHOTOGRAPHER FILTER MEDIA*/
 
 /* filter header */
 
+.photograph-filter {
+    width: 83%;
+}
+
 .photograph-filter-header {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: baseline;
     margin: 1.8% 0%;
 }
 
 .photograph-filter-header label {
     font-weight: 900;
     padding-right: 2%;
+    display: flex;
+    align-items: flex-start;
 }
 
-.photograph-filter {
-    margin: 1.8% 6%;
+.filter-container {
+    z-index: 2;
+    margin: 0;
 }
 
-#filters-select,
-.filter-popularity,
-.filter-date,
-.filter-title {
+.filter-container button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: #901c1c;
     color: white;
     border-radius: 3px;
@@ -74,8 +90,12 @@
     font-size: 15px;
     font-weight: 700;
     width: 170px;
-    height: 70px;
-    padding: 10px;
+    height: 60px;
+    padding: 0 20px;
+}
+
+.filter-container .filter-date {
+    border: solid 1px white;
 }
 
 /* filter container */
@@ -84,7 +104,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    column-gap: 250px;
+    column-gap: 20%;
     width: 100%;
 }
 
@@ -154,8 +174,8 @@
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     position: fixed;
-    bottom: 0px;
-    right: 35px;
+    bottom: -1px;
+    right: 40px;
     font-weight: 600;
 }
 
@@ -247,13 +267,16 @@
 .modal {
     border-radius: 5px;
     background-color: #DB8876;
-    width: 50%;
+    width: 35%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     padding: 35px;
     margin: auto;
+    position: absolute;
+    top: 20px;
+    left: 30%;
 }
 
 .modal header {
@@ -266,7 +289,7 @@
 }
 
 .modal header h2 {
-    font-size: 64px;
+    font-size: 50px;
     font-weight: normal;
     text-align: center;
 }
@@ -280,7 +303,7 @@ form {
 
 form label {
     color: #312E2E;
-    font-size: 36px;
+    font-size: 25px;
 }
 
 form div {

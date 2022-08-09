@@ -43,7 +43,7 @@ function photographerFactory(data) {
     <p class="city-portrait">${city}, ${country}</p>
     <p class="tagline-portrait">${tagline}</p>
     </div>
-    <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+    <button class="contact-button" onclick="displayModal()">Contactez-moi</button>
     <img class="img-portrait" src="${picture}" alt="${id}" title="picture of" + "${id}">
         `
     return (photographHeader)

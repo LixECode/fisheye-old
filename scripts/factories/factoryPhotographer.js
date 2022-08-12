@@ -95,7 +95,7 @@ function mediaFactory(data) {
           <div class="photograph-filter-text">
             <h3>${title}</h3>
             <ul class="photograph-like">
-              <li>${likes}<i class="fa-solid fa-heart heartSolid"></i></li>
+              <li>${likes}<i class="heart fa-solid fa-heart heartSolid"></i></li>
             </ul>
           </div>
     `
@@ -144,6 +144,8 @@ function navFactory(data) {
 
 // FACTORY PAGE PHOTOGRAPHER LIGHTBOX
 
+// A CHECKER
+
 // link with nav in factories
 function lightboxFactory(data) {
   const {
@@ -163,17 +165,18 @@ function lightboxFactory(data) {
   // get nav elements in factories
   function getLightboxFactory() {
 
+    const photographLightboxMain = document.querySelector('#main')
     const photographLightbox = document.createElement('div')
     photographLightbox.classList.add('lightbox')
     photographLightbox.innerHTML =
       `
-     <img src="${media}" alt="${id}" title=${title} >
-      <h3>${title}</h3>
-      <ul>
-        <li><i class="fa-solid fa-xmark"></i></li>
-        <li><i class="fa-solid fa-chevron-left"></i></li>
-        <li><i class="fa-solid fa-chevron-right"></i></li>
-      </ul>
+      <div class="lightbox-media">
+        <img src="${media}" alt="${id}" title=${title}>
+        <h3>${title}</h3>
+      </div>
+      <button class="lightbox-close"><i class="fa-solid fa-xmark"></i></button>
+      <button><i class="fa-solid fa-chevron-left"></i></button>
+      <button><i class="fa-solid fa-chevron-right"></i></button>
           `
     return (photographLightbox)
   }

@@ -17,4 +17,6 @@
         console.log('lightbox CLOSE');
     };
 
-    lightboxClose.addEventListener("click", closeLightbox);
+    function closeLightboxEvent() {
+        lightboxClose.addEventListener("click", closeLightbox);
+    };

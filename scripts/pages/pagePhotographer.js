@@ -87,11 +87,64 @@ async function displayDataPhotographer(photographers, medias) {
   const navDisplay = navModel.getNavFactory();
   nav.appendChild(navDisplay);
 
-  //lightboxfactory
-  // const lightbox = document.querySelector('.lightbox')
+  // A CHECKER 
 
-  // const lightboxModel = lightboxFactory();
-  // const lightboxDisplay = lightboxModel.getLightboxFactory();
-  // lightbox.appendChild(lightboxDisplay);
+  // ++ likes
+  const heart = document.queryselector('.heart');
+  heart.addEventListener("click", UpLikes)
+
+  function UpLikes() {
+    heart = 0;
+    heart.forEach(function (addLike) {
+      heart += +1;
+    })
+  };
 
 };
+
+
+// A CHECKER
+
+//lightboxfactory
+// const lightbox = document.querySelector('.lightbox')
+
+// const lightboxModel = lightboxFactory();
+// const lightboxDisplay = lightboxModel.getLightboxFactory();
+// lightbox.appendChild(lightboxDisplay);
+
+// };
+
+// A CHECKER
+
+// FILTER MENU
+
+const filterMenu = document.querySelector('.filter-container button')
+filterMenu.addEventListener("click", displayFilterMenu())
+console.log('fitler menu event ok')
+
+function displayFilterMenu() {
+  console.log('filterMenu function ok')
+  const filterDate = document.querySelector('.filter-date')
+  const filterTitle = document.querySelector('.filter-title')
+  filterDate.style.display = "block";
+  filterTitle.style.display = "block";
+  console.log('filterMenu is OPEN');
+  filterDate.addEventListener("click", displayFilterDate())
+  filterTitle.addEventListener("click", displayFilterTitle())
+};
+
+// function displayFilterDate() {
+//   // filter par date et afficher par date
+
+//   //changer inerthml filter-popularity par filter-date en premier et deuxième de place
+
+//   // fermer les boutons 2 et 3 display none pour n'afficher que le 1er
+// }
+
+// function displayFilterTitle() {
+//   // filter par title et afficher par title
+
+//   //changer inerthml filter-popularity par filter-title en premier et troisième de place
+
+//   // fermer les boutons 2 et 3 display none pour n'afficher que le 1er
+// };

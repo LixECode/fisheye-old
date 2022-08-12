@@ -73,12 +73,11 @@
 .filter-container {
     z-index: 2;
     margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .filter-container button {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     background-color: #901c1c;
     color: white;
     border-radius: 3px;
@@ -92,10 +91,31 @@
     width: 170px;
     height: 60px;
     padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.filter-container .filter-popularity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .filter-container .filter-date {
-    border: solid 1px white;
+    border-top: solid 1px white;
+    border-bottom: solid 1px white;
+
+}
+
+.filter-container .filter-popularity,
+.filter-container .filter-date,
+.filter-container .filter-title {
+    cursor: pointer;
+}
+
+.filter-container .filter-date,
+.filter-container .filter-title {
+    display: none;
 }
 
 /* filter container */

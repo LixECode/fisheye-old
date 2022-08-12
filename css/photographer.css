@@ -6,7 +6,7 @@
 /*PAGE PHOTOGRAPHER HEADER*/
 
 .photograph-header {
-    width: 75%;
+    width: 77%;
     background-color: #fafafa;
     height: 300px;
     padding: 0 4%;
@@ -71,7 +71,6 @@
 }
 
 .filter-container {
-    z-index: 2;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -95,10 +94,18 @@
     flex-direction: row;
 }
 
-.filter-container .filter-popularity {
+.filter-container .filter-total {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.filter-total.active i {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
 }
 
 .filter-container .filter-date {
@@ -113,9 +120,8 @@
     cursor: pointer;
 }
 
-.filter-container .filter-date,
-.filter-container .filter-title {
-    display: none;
+.none {
+    display: none !important;
 }
 
 /* filter container */
@@ -154,7 +160,7 @@
     width: 350px;
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: baseline;
     justify-content: space-between;
     color: #901c1c;
     font-size: 20px;
@@ -170,17 +176,33 @@
 
 /* Items Hearts and likes */
 
-.photograph-like {
+.photograph-filter-total-like,
+.photograph-filter-like {
     list-style: none;
-    padding: 0;
-    width: 72px;
     display: flex;
-    justify-content: flex-end;
+    flex-direction: row;
+    align-items: flex-start;
     margin-top: 0;
 }
 
-.fa-heart {
-    padding-left: 10px;
+.photograph-filter-like {
+    padding: 0;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.photograph-like-choice {
+    padding-left: 15px;
+    cursor: pointer;
+}
+
+.photograph-like {
+    position: absolute;
+    top: 2px;
+    right: 1px;
 }
 
 /*PAGE PHOTOGRAPHER NAV */
@@ -214,6 +236,16 @@
     padding-right: 30px;
 }
 
+.photograph-nav-like {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.photograph-nav-like i {
+    padding-left: 10px;
+}
+
 /*PAGE PHOTOGRAPHER LIGHTBOX*/
 
 .lightbox {
@@ -232,6 +264,7 @@
     top: 4%;
     left: 3%;
     position: fixed;
+    display: none;
 }
 
 .lightbox-media {

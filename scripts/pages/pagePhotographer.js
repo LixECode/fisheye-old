@@ -70,9 +70,6 @@ async function displayDataPhotographer(photographers, medias) {
 
   //navFactory
   const nav = document.querySelector('.photograph-nav')
-  // const photographersNav = nav.find(function (findNav) {
-  //   return findNav.nav == urlId;
-  // });
   let like = 0;
   media.forEach(function (totalLikes) {
     like += totalLikes.likes;
@@ -87,64 +84,40 @@ async function displayDataPhotographer(photographers, medias) {
   const navDisplay = navModel.getNavFactory();
   nav.appendChild(navDisplay);
 
-  // A CHECKER 
-
-  // ++ likes
-  const heart = document.queryselector('.heart');
-  heart.addEventListener("click", UpLikes)
-
-  function UpLikes() {
-    heart = 0;
-    heart.forEach(function (addLike) {
-      heart += +1;
-    })
-  };
-
 };
 
+// LIKES CHOICE CLICK
 
-// A CHECKER
+const LikeCounter = document.querySelector('.photograph-like-choice')
 
-//lightboxfactory
-// const lightbox = document.querySelector('.lightbox')
+LikeCounter.addEventListener("click", function () {
+  likes = like++;
+})
 
-// const lightboxModel = lightboxFactory();
-// const lightboxDisplay = lightboxModel.getLightboxFactory();
-// lightbox.appendChild(lightboxDisplay);
-
-// };
-
-// A CHECKER
 
 // FILTER MENU
 
-const filterMenu = document.querySelector('.filter-container button')
-filterMenu.addEventListener("click", displayFilterMenu())
-console.log('fitler menu event ok')
+const filterTotal = document.querySelector('.filter-total')
+filterTotal.addEventListener("click", function () {
+  const filterChoices = document.querySelector('.filter-choices')
+  filterChoices.classList.toggle('none')
+  filterTotal.classList.toggle('active')
+})
 
-function displayFilterMenu() {
-  console.log('filterMenu function ok')
-  const filterDate = document.querySelector('.filter-date')
-  const filterTitle = document.querySelector('.filter-title')
-  filterDate.style.display = "block";
-  filterTitle.style.display = "block";
-  console.log('filterMenu is OPEN');
-  filterDate.addEventListener("click", displayFilterDate())
-  filterTitle.addEventListener("click", displayFilterTitle())
-};
+const filterChoicesTable = document.querySelectorAll('.filter-choices button')
+filterChoicesTable.forEach(function (choice) {
+  choice.addEventListener("click", function () {
+    console.log('coucou')
+    // reafficher l'ancien
+    const filterChoiceButton = document.querySelector('.filter-choices .none')
+    filterChoiceButton.classList.remove('none')
+    // cacher celui sur lequel on clique
+    choice.classList.add('none')
+    // changement du titre en haut
+    const filterChoiceTotalText = choice.textContent
+    filterTotal.querySelector('span').textContent = filterChoiceTotalText
+  })
+});
 
-// function displayFilterDate() {
-//   // filter par date et afficher par date
-
-//   //changer inerthml filter-popularity par filter-date en premier et deuxième de place
-
-//   // fermer les boutons 2 et 3 display none pour n'afficher que le 1er
-// }
-
-// function displayFilterTitle() {
-//   // filter par title et afficher par title
-
-//   //changer inerthml filter-popularity par filter-title en premier et troisième de place
-
-//   // fermer les boutons 2 et 3 display none pour n'afficher que le 1er
-// };
+//function table en fonction du choix
+// 3 choix 

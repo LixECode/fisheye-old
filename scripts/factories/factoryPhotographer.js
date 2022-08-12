@@ -94,8 +94,12 @@ function mediaFactory(data) {
           ${media}
           <div class="photograph-filter-text">
             <h3>${title}</h3>
-            <ul class="photograph-like">
-              <li>${likes}<i class="heart fa-solid fa-heart heartSolid"></i></li>
+            <ul class="photograph-filter-total-like">
+            <li>${likes}</li>
+            </ul>
+            <ul class="photograph-filter-like">
+            <li><i class="photograph-like-choice photograph-dislike fa-regular fa-heart"></i></i></li>
+            <li><i class="photograph-like-choice photograph-like fa-solid fa-heart heartSolid"></i></li>
             </ul>
           </div>
     `
@@ -127,8 +131,8 @@ function navFactory(data) {
     photographNav.classList.add('photograph-nav-container')
     photographNav.innerHTML =
       `
-      <ul class="photograph-like">
-        <li>${likes}<i class="fa-solid fa-heart heartSolid"></i></li>
+      <ul class="photograph-nav-like">
+        <li>${likes}<i class="photograph-nav-likes fa-solid fa-heart heartSolid"></i></li>
       </ul>
       <p>${price}€ / jour</p>
           `
@@ -140,52 +144,4 @@ function navFactory(data) {
     getNavFactory
   }
 
-}
-
-// FACTORY PAGE PHOTOGRAPHER LIGHTBOX
-
-// A CHECKER
-
-// link with nav in factories
-function lightboxFactory(data) {
-  const {
-    image,
-    video,
-    id,
-    title,
-  } = data;
-
-  let media
-  if (!image) {
-    media = mediaVideo
-  } else {
-    media = mediaImage
-  }
-
-  // get nav elements in factories
-  function getLightboxFactory() {
-
-    const photographLightboxMain = document.querySelector('#main')
-    const photographLightbox = document.createElement('div')
-    photographLightbox.classList.add('lightbox')
-    photographLightbox.innerHTML =
-      `
-      <div class="lightbox-media">
-        <img src="${media}" alt="${id}" title=${title}>
-        <h3>${title}</h3>
-      </div>
-      <button class="lightbox-close"><i class="fa-solid fa-xmark"></i></button>
-      <button><i class="fa-solid fa-chevron-left"></i></button>
-      <button><i class="fa-solid fa-chevron-right"></i></button>
-          `
-    return (photographLightbox)
-  }
-  return {
-    media,
-    id,
-    title,
-    image,
-    video,
-    getLightboxFactory
-  }
 };

@@ -37,6 +37,7 @@ async function init() {
   } = await getMedia();
   displayDataPhotographer(photographers, medias)
   getLightbox()
+  getLikes()
 };
 
 init();
@@ -87,12 +88,33 @@ async function displayDataPhotographer(photographers, medias) {
 };
 
 // LIKES CHOICE CLICK
+function getLikes() {
+  // sinon ça affiche un table vide
+  const LikeCounters = document.querySelectorAll('.photograph-filter-like')
+  const TotalLikes = document.querySelector('.photograph-nav-like span')
+  console.log(LikeCounters)
+  LikeCounters.forEach(function (likeCounter) {
+    console.log('like fonctionne')
+    likeCounter.addEventListener("click", function () {
 
-const LikeCounter = document.querySelector('.photograph-like-choice')
+      const numero = likeCounter.closest('.photograph-filter-text').querySelector('.photograph-filter-total-like li')
+      let numeroPlus = parseInt(numero.textContent)
+      let TotalLikesPlus = parseInt(TotalLikes.textContent)
+      console.log(typeof numeroPlus)
+      if (likeCounter.classList.contains('active')) {
+        numeroPlus--
+        TotalLikesPlus--
+      } else {
+        numeroPlus++
+        TotalLikesPlus++
+      }
+      numero.textContent = numeroPlus
+      TotalLikes.textContent = TotalLikesPlus
+      likeCounter.classList.toggle('active')
+    })
+  })
 
-LikeCounter.addEventListener("click", function () {
-  likes = like++;
-})
+};
 
 
 // FILTER MENU

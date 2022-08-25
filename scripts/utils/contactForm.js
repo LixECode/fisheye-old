@@ -17,10 +17,9 @@ const modalSubmit = document.querySelector(".contact-button"); //modal submit bu
 
 
 function InsertName() {
-    const InsertName = document.querySelector('.header-form');
-    InsertName.createElement('p');
-    p.textContent = 'blaaaaa';
-    InsertName.appendChild(p);
+    const InsertName = document.querySelector('.header-form h3');
+    InsertName.textContent = 'teeeest';
+    InsertName.appendChild();
 }
 
 // function /firstname

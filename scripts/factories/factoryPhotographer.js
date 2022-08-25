@@ -1,7 +1,8 @@
-// FACTORY INDEX + PHOTOGRAPHER PAGES
+// FACTORY CARD PORTRAIT PHOTOGRAPHER
 
-// link media with portrait photographer
+// link media data from photographers.json with portrait photographer on Index page
 function photographerFactory(data) {
+  // list of all media data
   const {
     name,
     id,
@@ -12,11 +13,14 @@ function photographerFactory(data) {
     portrait
   } = data;
 
+  // link portrait image in files project
   const picture = `assets/photographers/${portrait}`;
 
-  // get media with portrait photographer in html
+  // get media data from photographers.json with portrait CARD photographer on Index page in html
   function getUserCardDOM() {
+    // create a article balise in html
     const photographPortrait = document.createElement("article");
+    // create the html in article balise with id variable of media data from photographers.json
     photographPortrait.innerHTML =
       `
         <a href="photographer.html?id=${id}"><img class="img-portrait" src="${picture}" alt ="${name}" title = "picture of" + "${name}">
@@ -25,17 +29,21 @@ function photographerFactory(data) {
         <p class="tagline-portrait">${tagline}</p>
         <p class="price-portrait">${price}€/jour</p>
         `
-
+    // display the new article balise created
     return (photographPortrait);
   }
 
-  // FACTORY PAGE PHOTOGRAPHER HEADER
+  // FACTORY PORTRAIT SUBLINES PHOTOGRAPHER
 
-  // get media for portrait photographer in html
+  // get media data from photographers.json with portrait sublines photographer on Index page in html
   function getPortraitPhotographer() {
+    // search in html the class for creating new div inside in html
     const photographHeaderSection = document.querySelector('.photograph-header')
+    // create a div balise in html
     const photographHeader = document.createElement('div')
+    // add a id class to the div
     photographHeader.classList.add('photograph-header-container')
+    // create the html in div balise with id variable of media data from photographers.json
     photographHeader.innerHTML =
       `
     <div class="photograph-portrait">
@@ -48,7 +56,7 @@ function photographerFactory(data) {
         `
     return (photographHeader)
   }
-
+  // display the new div balise created with variables tags inside
   return {
     name,
     id,
@@ -65,7 +73,7 @@ function photographerFactory(data) {
 
 // FACTORY PAGE PHOTOGRAPHER FILTER MEDIAS
 
-// link with media in factories
+// link with photographer data from photographer.json
 function mediaFactory(data) {
   const {
     photographerId,
@@ -75,9 +83,10 @@ function mediaFactory(data) {
     video,
   } = data;
 
-  // links with medias files
+  // links medias in files project
   const mediaImage = `<img src="./assets/images/${photographerId}/${image}"/>`;
   const mediaVideo = `<video><source src="./assets/images/${photographerId}/${video}#t=5.0" type="video/mp4"></video>`;
+  // create a variable for choosing to display video or image
   let media
   if (!image) {
     media = mediaVideo
@@ -85,10 +94,13 @@ function mediaFactory(data) {
     media = mediaImage
   }
 
-  // get media in html
+  // get photographer data from photographer.json in html
   function getMediaFactory() {
+    // create a new article balise in html
     const photographFilterArticle = document.createElement('article')
+    // add a class id to the article
     photographFilterArticle.classList.add('photograph-filter-article')
+    // create html inside the new article balise with variable tags
     photographFilterArticle.innerHTML +=
       `
           ${media}
@@ -103,8 +115,10 @@ function mediaFactory(data) {
             </ul>
           </div>
     `
+    // display new html for checking if $media is video or image
     return (photographFilterArticle)
   }
+  // display all the html after checking if media is video or image
   return {
     photographerId,
     title,
@@ -117,18 +131,20 @@ function mediaFactory(data) {
 
 // FACTORY PAGE PHOTOGRAPHER NAV
 
-// link with nav in factories
+// link media in photographers.json with nav 
 function navFactory(data) {
   const {
     price,
     likes
   } = data;
 
-  // get nav elements in factories
+  // get media in photographers.jason with html
   function getNavFactory() {
-
+    // create new div
     const photographNav = document.createElement('div')
+    // add class to th new div
     photographNav.classList.add('photograph-nav-container')
+    // create the html of the new div with tags variable data
     photographNav.innerHTML =
       `
       <ul class="photograph-nav-like">
@@ -136,8 +152,10 @@ function navFactory(data) {
       </ul>
       <p>${price}€ / jour</p>
           `
+    // display new div checking likes and prices
     return (photographNav)
   }
+  // display all new html creating
   return {
     price,
     likes,
